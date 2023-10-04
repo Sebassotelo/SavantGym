@@ -1,0 +1,27 @@
+@import '../../styles/variables.module.scss';
+
+.main{
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    gap: 15px;
+
+    .headerSeccion{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .alumnos{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    
+}

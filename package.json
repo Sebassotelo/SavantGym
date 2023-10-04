@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "firebase": "^10.4.0",
+    "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "next": "latest"
+    "react-icons": "^4.11.0",
+    "sass": "^1.68.0",
+    "sonner": "^1.0.3"
   },
   "devDependencies": {
     "eslint": "latest",

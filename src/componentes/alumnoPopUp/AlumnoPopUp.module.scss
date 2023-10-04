@@ -1,0 +1,60 @@
+@import "../../styles/variables.module.scss";
+
+.main {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.466);
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    width: 600px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .pagos {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0 0px 0;
+      padding: 3px;
+      border-radius: 5px;
+      background-color: $white-color;
+
+      .deletePago {
+        color: $black-color;
+        font-size: 24px;
+        cursor: pointer;
+      }
+    }
+
+    .eliminarAlumno {
+      width: 150px;
+      align-self: center;
+      border: none;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: $black-color;
+      color: $white-color;
+      cursor: pointer;
+    }
+    .cerrar {
+      width: 150px;
+      align-self: center;
+      border: none;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: $white-color;
+      color: $black-color;
+      cursor: pointer;
+    }
+  }
+}

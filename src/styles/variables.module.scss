@@ -1,0 +1,17 @@
+$primary-color: #D0ADA7;
+$secondary-color: #B97EBA;
+$third-color: #AD6A6C;
+$white-color: #E8D6CB;
+$black-color: #672246;
+$fuente1: "Quicksand", sans-serif;
+$fuente2: "Kanit", sans-serif;
+$fuente3: "Bebas Neue", cursive;
+
+@export "primary-color";
+@export "secondary-color";
+@export "third-color";
+@export "white-color";
+@export "black-color";
+@export "fuente1";
+@export "fuente2";
+@export "fuente3";

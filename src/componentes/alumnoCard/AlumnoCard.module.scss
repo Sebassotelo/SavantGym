@@ -1,0 +1,30 @@
+@import '../../styles/variables.module.scss';
+
+.container{
+    height: 100px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: $white-color;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+
+    h3,p{
+        color: $black-color;
+    }
+    .realizarPago {
+        background-color: $black-color;
+        color: $white-color;
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+        
+    .delete{
+        font-size: 32px;
+        cursor: pointer;
+        color: $black-color;
+    }
+}
