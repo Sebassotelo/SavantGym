@@ -13,7 +13,7 @@ import {
   signOut,
 } from "firebase/auth";
 
-function index() {
+function Index() {
   const router = useRouter();
 
   const context = useContext(ContextGeneral);
@@ -51,4 +51,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

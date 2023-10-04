@@ -39,9 +39,10 @@ function Alumnos() {
       </div>
       <div className={styles.alumnos}>
         {context.alumnos &&
-          context.alumnos.map((item) => {
+          context.alumnos.map((item, i) => {
             return (
               <AlumnoCard
+                key={i}
                 id={item.id}
                 nombre={item.nombre}
                 dni={item.dni}

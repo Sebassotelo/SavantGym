@@ -63,9 +63,9 @@ function AlumnoPopUp({
         <p>Vencimiento: {vencimiento}</p>
         <p>PAGOS:</p>
 
-        {historialDePago.map((item) => {
+        {historialDePago.map((item, i) => {
           return (
-            <div className={styles.pagos}>
+            <div className={styles.pagos} key={i}>
               <p>Fecha: {item.fecha}</p>
               <p>${item.monto}</p>
 
