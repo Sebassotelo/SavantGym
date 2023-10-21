@@ -43,7 +43,7 @@ function Activos() {
         <p>Vencimiento</p>
       </div>
       {showActivos.map((item, i) => {
-        return <ItemActivo item={item} />;
+        return <ItemActivo key={i} item={item} />;
       })}
     </div>
   );

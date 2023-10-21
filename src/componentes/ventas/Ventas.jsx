@@ -34,8 +34,8 @@ function Ventas() {
           .map((item) => {
             return (
               <>
-                {item.compraProductos.map((venta) => {
-                  return <PagosPendientes item={item} venta={venta} />;
+                {item.compraProductos.map((venta, i) => {
+                  return <PagosPendientes key={i} item={item} venta={venta} />;
                 })}
               </>
             );

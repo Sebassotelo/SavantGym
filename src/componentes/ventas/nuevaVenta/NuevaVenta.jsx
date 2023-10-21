@@ -136,9 +136,10 @@ function NuevaVenta({ mostrarNuevaVenta }) {
 
         {!comprador && (
           <div className={styles.listaNombres}>
-            {busquedaVentas.map((item) => {
+            {busquedaVentas.map((item, i) => {
               return (
                 <div
+                  key={i}
                   className={styles.listaItems}
                   onClick={() => setComprador(item)}
                 >
