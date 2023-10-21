@@ -36,13 +36,25 @@ function Context(props) {
     onAuthStateChanged(auth, inspectorSesion);
   };
 
+  const compararPorNombre = (a, b) => {
+    const nombreA = a.nombre.toLowerCase();
+    const nombreB = b.nombre.toLowerCase();
+    if (nombreA < nombreB) {
+      return -1;
+    }
+    if (nombreA > nombreB) {
+      return 1;
+    }
+    return 0;
+  };
+
   const llamadaDB = async () => {
     setLoader(false);
     const docRef = doc(firestore, `users/sebassotelo97@gmail.com`);
     const consulta = await getDoc(docRef);
     const infoDocu = consulta.data();
 
-    setAlumnos(infoDocu.alumnos);
+    setAlumnos(infoDocu.alumnos.sort(compararPorNombre));
     setAlumnosOriginal(infoDocu.alumnos);
     // setProductosCopia(infoDocu.items);
     // setCupones(infoDocu.cupones);

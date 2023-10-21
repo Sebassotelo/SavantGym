@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./AlumnoPopUp.module.scss";
 import { doc, updateDoc, getDoc } from "firebase/firestore";
 
@@ -6,6 +6,7 @@ import { MdOutlineDeleteForever } from "react-icons/md";
 import ContextGeneral from "@/servicios/contextPrincipal";
 
 import { toast } from "sonner";
+import RealizarPago from "../realizarPago/RealizarPago";
 
 function AlumnoPopUp({
   id,
@@ -21,6 +22,8 @@ function AlumnoPopUp({
 }) {
   const context = useContext(ContextGeneral);
   const { llamadaDB } = useContext(ContextGeneral);
+
+  const [showPagos, setShowPagos] = useState(false);
 
   const eliminarPago = (idPago) => {
     return async (e) => {
@@ -57,11 +60,11 @@ function AlumnoPopUp({
     <div className={styles.main}>
       <div className={styles.container}>
         <h3>Nombre: {nombre}</h3>
-        <p>DNI: {dni}</p>
-        <p>Alumno Desde: {alumnoDesde}</p>
-        <p>Activo: {activo ? "Si" : "No"} </p>
-        <p>Vencimiento: {vencimiento}</p>
-        <p>PAGOS:</p>
+        <p className={styles.p}>DNI: {dni}</p>
+        <p className={styles.p}>Alumno Desde: {alumnoDesde}</p>
+        <p className={styles.p}>Activo: {activo ? "Si" : "No"} </p>
+        <p className={styles.p}>Vencimiento: {vencimiento}</p>
+        <h3>PAGOS:</h3>
 
         {historialDePago.map((item, i) => {
           return (
@@ -77,17 +80,40 @@ function AlumnoPopUp({
           );
         })}
 
-        <button
-          className={styles.eliminarAlumno}
-          onClick={eliminarAlumno(id, nombre)}
-        >
-          Eliminar Alumno
-        </button>
+        {compraProductos.length > 0 && <h3>PRODUCTOS:</h3>}
 
-        <button className={styles.cerrar} onClick={() => setShow(false)}>
-          Cerrar
-        </button>
+        {compraProductos &&
+          compraProductos.map((item, i) => {
+            return (
+              <div className={styles.pagos} key={i}>
+                <p>{item.producto}</p>
+                <p>{item.fecha}</p>
+                <p>${item.monto}</p>
+              </div>
+            );
+          })}
+
+        <div className={styles.botones}>
+          <button className={styles.cerrar} onClick={() => setShowPagos(true)}>
+            Realizar Pago
+          </button>
+
+          <button
+            className={styles.eliminarAlumno}
+            onClick={eliminarAlumno(id, nombre)}
+          >
+            Eliminar Alumno
+          </button>
+
+          <button className={styles.cerrar} onClick={() => setShow(false)}>
+            Cerrar
+          </button>
+        </div>
       </div>
+
+      {showPagos && (
+        <RealizarPago setShowPago={setShowPagos} id={id} nombre={nombre} />
+      )}
     </div>
   );
 }

@@ -1,0 +1,52 @@
+@import "../../styles/variables.module.scss";
+
+.main {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.466);
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    width: 600px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin-top: 8px;
+      color: $black-color;
+      font-weight: 600;
+    }
+
+    input {
+      height: 40px;
+      background-color: $white-color;
+      border-radius: 10px;
+      width: 100%;
+      border: none;
+      outline: none;
+      padding-left: 15px;
+      color: $black-color;
+    }
+
+    button {
+      border: none;
+      margin-top: 8px;
+      background-color: $black-color;
+      color: $white-color;
+      padding: 10px;
+      border-radius: 15px;
+      cursor: pointer;
+      width: 150px;
+      align-self: center;
+    }
+  }
+}

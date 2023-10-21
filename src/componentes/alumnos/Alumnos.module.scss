@@ -1,27 +1,62 @@
-@import '../../styles/variables.module.scss';
+@import "../../styles/variables.module.scss";
 
-.main{
+.main {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  gap: 15px;
+
+  .headerSeccion {
+    margin-top: 50px;
     width: 100%;
-    min-height: 500px;
+    display: flex;
+    justify-content: space-between;
+
+    .buscador {
+      display: flex;
+      justify-content: center;
+
+      input {
+        background-color: $black-color;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        border: none;
+        outline: none;
+        padding-left: 15px;
+        color: $white-color;
+        font-family: $fuente1;
+        min-width: 300px;
+      }
+
+      button {
+        background-color: $white-color;
+        border: none;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: 0 5px 0 5px;
+        color: $black-color;
+        cursor: pointer;
+        font-weight: 600;
+        font-family: $fuente1;
+      }
+    }
+    .borrarBusqueda {
+      background-color: $black-color;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+  }
+
+  .alumnos {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 25px;
     gap: 15px;
-
-    .headerSeccion{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .alumnos{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    
+  }
 }

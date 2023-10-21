@@ -1,0 +1,125 @@
+@import "../../../styles/variables.module.scss";
+
+.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.733);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  .container {
+    width: 600px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 15px;
+    color: $black-color;
+    display: flex;
+    flex-direction: column;
+
+    .formBuscador {
+      width: 100%;
+
+      input {
+        width: 90%;
+        height: 40px;
+        background-color: $white-color;
+        outline: none;
+        border: none;
+        padding-left: 15px;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        color: $black-color;
+      }
+
+      button {
+        background-color: $black-color;
+        color: $white-color;
+        height: 40px;
+        width: 10%;
+        border: none;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: 0 10px 0 10px;
+      }
+    }
+
+    .listaNombres {
+      width: 100%;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+      cursor: pointer;
+      padding: 8px;
+
+      .listaItems {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: $white-color;
+        padding: 5px;
+      }
+    }
+    .alumnoSelecionado {
+      background-color: $white-color;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+
+      .cambiarAlumno {
+        background-color: $black-color;
+        color: $white-color;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+
+    .formVenta {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      input {
+        width: 100%;
+        height: 40px;
+        background-color: $white-color;
+        outline: none;
+        border: none;
+        padding-left: 15px;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        color: $black-color;
+      }
+
+      button {
+        background-color: $black-color;
+        color: $white-color;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+    }
+
+    .cerrar {
+      background-color: $white-color;
+      color: $black-color;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      margin-top: 10px;
+      cursor: pointer;
+      align-self: center;
+    }
+  }
+}

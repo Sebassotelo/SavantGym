@@ -1,0 +1,72 @@
+@import "../../styles/variables.module.scss";
+
+.container {
+  padding: 15px 0 15px 0;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h4 {
+    font-weight: 600;
+    font-size: 22px;
+    margin: 10px 0 10px 0;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    width: 60%;
+    border-bottom: 2px solid white;
+    padding-bottom: 25px;
+
+    .redes {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      .icon__container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+
+        .icon {
+          font-size: 32px;
+          cursor: pointer;
+          background-color: white;
+          color: black;
+          border-radius: 50%;
+          padding: 3px;
+          &:hover {
+            color: $white-color;
+            background-color: $black-color;
+          }
+        }
+      }
+    }
+    .contacto {
+      p {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+    }
+  }
+
+  .hecho {
+    margin-top: 15px;
+    a {
+      font-weight: 900;
+
+      &:hover {
+        color: $white-color;
+      }
+    }
+  }
+}

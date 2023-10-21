@@ -108,10 +108,10 @@ function AgregarAlumnos() {
               <p>Monto del Pago $:</p>
               <input type="text" id="inputMonto" />
               <button type="submit">Guardar</button>
+              <button className={styles.agregar} onClick={manejarShow}>
+                Cerrar
+              </button>
             </form>
-            <p className={styles.agregar} onClick={manejarShow}>
-              Cerrar
-            </p>
           </div>
         </>
       ) : (

@@ -86,8 +86,10 @@ function RealizarPago({ setShowPago, id, nombre }) {
           id="inputVencimiento"
           defaultValue={fechaVencimiento}
         />
-        <button type="submit">Guardar</button>
-        <button onClick={() => setShowPago(false)}>Cerrar</button>
+        <div className={styles.botones}>
+          <button type="submit">Guardar</button>
+          <button onClick={() => setShowPago(false)}>Cerrar</button>
+        </div>
       </form>
     </div>
   );

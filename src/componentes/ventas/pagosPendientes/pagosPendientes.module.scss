@@ -1,0 +1,23 @@
+@import "../../../styles/variables.module.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  justify-items: center;
+  background-color: $white-color;
+  padding: 10px;
+
+  p {
+    font-size: 18px;
+    color: $black-color;
+  }
+
+  .eliminar {
+    background-color: $black-color;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: $white-color;
+  }
+}

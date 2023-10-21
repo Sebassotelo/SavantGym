@@ -1,0 +1,39 @@
+@import "../../styles/variables.module.scss";
+
+.main {
+  width: 100%;
+  padding: 15px;
+  margin-top: 25px;
+
+  .pagosPendientes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .cabecera {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+
+    p {
+      border: 1px solid $black-color;
+      width: 100%;
+      text-align: center;
+      font-weight: 900;
+      color: $black-color;
+    }
+  }
+}
+
+.nuevaVentaBtn {
+  background-color: $black-color;
+  padding: 15px;
+  border-radius: 15px;
+  font-weight: 900;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+}
