@@ -5,9 +5,11 @@ import ContextGeneral from "@/servicios/contextPrincipal";
 import Activos from "@/componentes/activos/Activos";
 import Ventas from "@/componentes/ventas/Ventas";
 
+import { push } from "next/router";
+
 function Index() {
   const context = useContext(ContextGeneral);
-  const { llamadaDB } = useContext(ContextGeneral);
+  const { verificarLogin } = useContext(ContextGeneral);
   const [estadoMenu, setEstadoMenu] = useState(1);
 
   const cambioEstado = (num) => {
@@ -15,7 +17,9 @@ function Index() {
   };
 
   useEffect(() => {
-    llamadaDB();
+    if (!context.user) {
+      verificarLogin();
+    }
   }, []);
 
   return (
@@ -23,7 +27,7 @@ function Index() {
       <ul className={styles.menu}>
         <li
           style={{
-            backgroundColor: estadoMenu == 1 && "#672246",
+            backgroundColor: estadoMenu == 1 && "#4b05ad",
             color: estadoMenu == 1 && "#E8D6CB",
           }}
           onClick={() => cambioEstado(1)}
@@ -32,7 +36,7 @@ function Index() {
         </li>
         <li
           style={{
-            backgroundColor: estadoMenu == 2 && "#672246",
+            backgroundColor: estadoMenu == 2 && "#4b05ad",
             color: estadoMenu == 2 && "#E8D6CB",
           }}
           onClick={() => cambioEstado(2)}
@@ -41,7 +45,7 @@ function Index() {
         </li>
         <li
           style={{
-            backgroundColor: estadoMenu == 3 && "#672246",
+            backgroundColor: estadoMenu == 3 && "#4b05ad",
             color: estadoMenu == 3 && "#E8D6CB",
           }}
           onClick={() => cambioEstado(3)}

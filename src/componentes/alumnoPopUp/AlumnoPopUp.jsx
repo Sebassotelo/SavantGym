@@ -11,6 +11,8 @@ import RealizarPago from "../realizarPago/RealizarPago";
 function AlumnoPopUp({
   id,
   nombre,
+  numero,
+  correo,
   dni,
   alumnoDesde,
   activo,
@@ -30,7 +32,7 @@ function AlumnoPopUp({
       e.preventDefault(e);
 
       //traemos los datos de base de datos
-      const docRef = doc(context.firestore, `users/sebassotelo97@gmail.com`);
+      const docRef = doc(context.firestore, `users/${context.user.email}`);
       const consulta = await getDoc(docRef);
       const infoDocu = consulta.data();
 
@@ -61,6 +63,8 @@ function AlumnoPopUp({
       <div className={styles.container}>
         <h3>Nombre: {nombre}</h3>
         <p className={styles.p}>DNI: {dni}</p>
+        <p className={styles.p}>Numero: {numero}</p>
+        <p className={styles.p}>Correo Electronico: {correo}</p>
         <p className={styles.p}>Alumno Desde: {alumnoDesde}</p>
         <p className={styles.p}>Activo: {activo ? "Si" : "No"} </p>
         <p className={styles.p}>Vencimiento: {vencimiento}</p>

@@ -2,7 +2,7 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   align-items: center;
   justify-items: center;
   background-color: $white-color;
@@ -14,10 +14,9 @@
   }
 
   .eliminar {
-    background-color: $black-color;
-    padding: 5px;
     border-radius: 10px;
+    font-size: 32px;
     cursor: pointer;
-    color: $white-color;
+    color: $black-color;
   }
 }

@@ -33,12 +33,14 @@ function AgregarAlumnos() {
     e.preventDefault(e);
 
     const nombre = e.target.inputNombre.value;
+    const correo = e.target.inputCorreo.value;
+    const numero = e.target.inputNumero.value;
     const dni = e.target.inputDni.value;
     const vencimiento = e.target.inputVencimiento.value;
     const monto = e.target.inputMonto.value;
 
     //traemos los datos de base de datos
-    const docRef = doc(context.firestore, `users/sebassotelo97@gmail.com`);
+    const docRef = doc(context.firestore, `users/${context.user.email}`);
     const consulta = await getDoc(docRef);
     const infoDocu = consulta.data();
 
@@ -53,6 +55,8 @@ function AgregarAlumnos() {
       {
         id: new Date().getTime(),
         nombre: nombre,
+        correo: correo,
+        numero: numero,
         dni: dni,
         alumnoDesde: fechaRegistro,
         activo: true,
@@ -99,6 +103,10 @@ function AgregarAlumnos() {
               <input type="text" id="inputNombre" required />
               <p>DNI:</p>
               <input type="text" id="inputDni" required />
+              <p>Numero:</p>
+              <input type="text" id="inputNumero" required />
+              <p>Correo Electronico:</p>
+              <input type="text" id="inputCorreo" required />
               <p>Vencimiento:</p>
               <input
                 type="text"

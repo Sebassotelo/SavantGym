@@ -1,65 +1,76 @@
-@import '../../styles/variables.module.scss';
+@import "../../styles/variables.module.scss";
 
 .agregar {
-    background-color: $black-color;
-    border-radius: 10px;
-    padding: 15px;
-    font-weight: 900;
-    cursor: pointer;
-    margin: 0;
+  background-color: $white-color;
+  color: $black-color;
+  border-radius: 10px;
+  padding: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  margin: 0;
 }
 
-.container{
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.466);
-    top: 0;
-    left: 0;
+.container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.466);
+  backdrop-filter: blur(2px);
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .container__popup {
+    width: 500px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: rgb(38 50 56 / 16%) 0px 8px 16px,
+      rgb(0 0 0 / 30%) 0px 4px 5px -4px,
+      rgb(255 255 255 / 50%) 0px 2px 5px inset,
+      rgb(0 0 0 / 20%) 0px -1px 3px inset;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
-    .container__popup{
-       
-        width: 500px;
-        background-color: white;
-        border-radius: 15px;
-        box-shadow: rgb(38 50 56 / 16%) 0px 8px 16px, rgb(0 0 0 / 30%) 0px 4px 5px -4px, rgb(255 255 255 / 50%) 0px 2px 5px inset, rgb(0 0 0 / 20%) 0px -1px 3px inset;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-
-        p{
-            color: $black-color;
-            font-weight: 600;
-            font-size: 18px;
-        }
-
-        input{
-            background-color: $white-color;
-            height: 40px;
-            border: none;
-            border-radius: 10px;
-            outline: none;
-            padding-left: 15px;
-            color: $black-color;
-            font-weight: 600;
-            font-family: $fuente1;
-            width: 100%;
-        }
-
-         button {
-             background-color: $black-color;
-             border-radius: 10px;
-             padding: 15px;
-             font-weight: 900;
-             cursor: pointer;
-             margin: 0;
-             border: none;
-             font-family: $fuente1;
-             margin-top: 20px;            
-        }
+    p {
+      color: $black-color;
+      font-weight: 600;
+      font-size: 18px;
     }
+
+    input {
+      background-color: $white-color;
+      height: 40px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      padding-left: 15px;
+      color: $black-color;
+      font-weight: 600;
+      font-family: $fuente1;
+      width: 100%;
+    }
+
+    button {
+      background-color: $black-color;
+      color: $white-color;
+      border-radius: 10px;
+      padding: 15px;
+      font-weight: 900;
+      cursor: pointer;
+      margin: 0;
+      border: none;
+      font-family: $fuente1;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .container__popup {
+    width: 90vw !important;
+  }
 }

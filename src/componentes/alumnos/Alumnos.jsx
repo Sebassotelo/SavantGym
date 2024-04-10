@@ -24,7 +24,7 @@ function Alumnos() {
 
         console.log(nuevoItems);
 
-        const docRef = doc(context.firestore, `users/sebassotelo97@gmail.com`);
+        const docRef = doc(context.firestore, `users/${context.user.email}`);
         await updateDoc(docRef, { alumnos: [...nuevoItems] });
         llamadaDB();
         toast.success(`${alumno} Eliminado Correctamente`);
@@ -105,6 +105,8 @@ function Alumnos() {
                 key={i}
                 id={item.id}
                 nombre={item.nombre}
+                numero={item.numero}
+                correo={item.correo}
                 dni={item.dni}
                 alumnoDesde={item.alumnoDesde}
                 activo={item.activo}

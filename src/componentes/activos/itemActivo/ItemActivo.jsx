@@ -15,7 +15,7 @@ function ItemActivo({ item }) {
 
         console.log(nuevoItems);
 
-        const docRef = doc(context.firestore, `users/sebassotelo97@gmail.com`);
+        const docRef = doc(context.firestore, `users/${context.user.email}`);
         await updateDoc(docRef, { alumnos: [...nuevoItems] });
         llamadaDB();
         toast.success(`${alumno} Eliminado Correctamente`);

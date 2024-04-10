@@ -21,7 +21,6 @@ function Ventas() {
 
       <div className={styles.cabecera}>
         <p>Nombre</p>
-        <p>DNI</p>
         <p>Producto</p>
         <p>Monto $</p>
         <p>Fecha</p>

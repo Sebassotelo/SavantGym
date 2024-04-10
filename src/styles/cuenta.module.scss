@@ -1,39 +1,56 @@
-@import './variables.module.scss';
+@import "./variables.module.scss";
 
-.main{
-    min-height: 100vh;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 250px 1fr;
+.main {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 250px 1fr;
 
-    .menu{
-        background-color: $white-color;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-        padding: 50px 0 0 30px;
+  .menu {
+    background-color: $white-color;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 50px 0 0 30px;
 
-        li{
-            list-style: none;
-            font-weight: 900;
-            font-size: 22px;
-            color: $black-color;
-            transition-duration: .3s;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 10px;
-            background-color: $white-color;
-            
+    li {
+      list-style: none;
+      font-weight: 900;
+      font-size: 22px;
+      color: $black-color;
+      transition-duration: 0.3s;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: $white-color;
 
-            &:hover{
-                color: white;
-                background-color: $black-color;
-            }
-        }
-
-
-
+      &:hover {
+        color: white;
+        background-color: $black-color;
+      }
     }
+  }
+}
 
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 1fr;
+
+    .menu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+      height: 80px;
+
+      li {
+        font-size: 20px;
+        padding: 10px;
+      }
+    }
+  }
 }

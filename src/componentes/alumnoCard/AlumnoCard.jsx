@@ -6,6 +6,7 @@ import {
   MdOutlineEdit,
   MdToggleOff,
   MdToggleOn,
+  MdOutlineAttachMoney,
 } from "react-icons/md";
 
 import RealizarPago from "../realizarPago/RealizarPago";
@@ -20,6 +21,8 @@ import { toast } from "sonner";
 function AlumnoCard({
   id,
   nombre,
+  numero,
+  correo,
   dni,
   alumnoDesde,
   activo,
@@ -44,7 +47,7 @@ function AlumnoCard({
       e.preventDefault(e);
 
       //traemos los datos de base de datos
-      const docRef = doc(context.firestore, `users/sebassotelo97@gmail.com`);
+      const docRef = doc(context.firestore, `users/${context.user.email}`);
       const consulta = await getDoc(docRef);
       const infoDocu = consulta.data();
 
@@ -88,9 +91,10 @@ function AlumnoCard({
           <MdToggleOff className={styles.toggleOff} onClick={manejarActivo} />
         )}
 
-        <p onClick={() => setShowPago(true)} className={styles.realizarPago}>
-          Realizar Pago
-        </p>
+        <MdOutlineAttachMoney
+          className={styles.realizarPago}
+          onClick={() => setShowPago(true)}
+        />
 
         <MdOutlineEdit
           className={styles.delete}
@@ -107,6 +111,8 @@ function AlumnoCard({
         <EditarAlumno
           id={id}
           nombre={nombre}
+          numero={numero}
+          correo={correo}
           dni={dni}
           alumnoDesde={alumnoDesde}
           activo={activo}
@@ -126,6 +132,8 @@ function AlumnoCard({
         <AlumnoPopUp
           id={id}
           nombre={nombre}
+          numero={numero}
+          correo={correo}
           dni={dni}
           alumnoDesde={alumnoDesde}
           activo={activo}

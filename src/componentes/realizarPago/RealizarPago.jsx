@@ -33,7 +33,7 @@ function RealizarPago({ setShowPago, id, nombre }) {
     const vencimiento = e.target.inputVencimiento.value;
 
     //traemos los datos de base de datos
-    const docRef = doc(context.firestore, `users/sebassotelo97@gmail.com`);
+    const docRef = doc(context.firestore, `users/${context.user.email}`);
     const consulta = await getDoc(docRef);
     const infoDocu = consulta.data();
 

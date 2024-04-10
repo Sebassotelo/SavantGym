@@ -1,7 +1,7 @@
 @import "../../styles/variables.module.scss";
 
 .main {
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.466);
@@ -48,5 +48,11 @@
       width: 150px;
       align-self: center;
     }
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 95vw !important;
   }
 }

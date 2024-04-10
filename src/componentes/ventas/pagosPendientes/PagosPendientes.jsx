@@ -5,6 +5,8 @@ import { toast } from "sonner";
 import { doc, updateDoc, getDoc } from "firebase/firestore";
 import ContextGeneral from "@/servicios/contextPrincipal";
 
+import { MdOutlineDeleteForever } from "react-icons/md";
+
 function PagosPendientes({ item, venta }) {
   const context = useContext(ContextGeneral);
   const { llamadaDB } = useContext(ContextGeneral);
@@ -17,7 +19,7 @@ function PagosPendientes({ item, venta }) {
       ) === true
     ) {
       //traemos los datos de base de datos
-      const docRef = doc(context.firestore, `users/sebassotelo97@gmail.com`);
+      const docRef = doc(context.firestore, `users/${context.user.email}`);
       const consulta = await getDoc(docRef);
       const infoDocu = consulta.data();
 
@@ -45,13 +47,14 @@ function PagosPendientes({ item, venta }) {
   return (
     <div className={styles.container}>
       <p>{item.nombre}</p>
-      <p>{item.dni}</p>
       <p>{venta.producto}</p>
       <p>${venta.monto}</p>
       <p>{venta.fecha}</p>
-      <p className={styles.eliminar} onClick={eliminarVenta}>
-        Eliminar
-      </p>
+
+      <MdOutlineDeleteForever
+        className={styles.eliminar}
+        onClick={eliminarVenta}
+      />
     </div>
   );
 }

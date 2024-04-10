@@ -3,7 +3,7 @@
 .container {
   height: 80px;
   backdrop-filter: blur(3px);
-  background-color: rgba(0, 0, 0, 0.384);
+  background-color: $black-color;
   width: 100%;
   position: fixed;
   top: 0px;
@@ -15,6 +15,8 @@
   .logo {
     padding-left: 15px;
     font-weight: 900;
+    height: 60px;
+    cursor: pointer;
   }
 
   .nav {

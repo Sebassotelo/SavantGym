@@ -20,24 +20,24 @@
       justify-content: center;
 
       input {
-        background-color: $black-color;
+        background-color: $white-color;
         border-bottom-left-radius: 10px;
         border-top-left-radius: 10px;
         border: none;
         outline: none;
         padding-left: 15px;
-        color: $white-color;
+        color: $black-color;
         font-family: $fuente1;
         min-width: 300px;
       }
 
       button {
-        background-color: $white-color;
+        background-color: $black-color;
         border: none;
         border-bottom-right-radius: 10px;
         border-top-right-radius: 10px;
         padding: 0 5px 0 5px;
-        color: $black-color;
+        color: $white-color;
         cursor: pointer;
         font-weight: 600;
         font-family: $fuente1;
@@ -58,5 +58,64 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    gap: 15px;
+
+    .headerSeccion {
+      margin-top: 15px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      .buscador {
+        display: flex;
+        justify-content: center;
+        height: 60px;
+
+        input {
+          background-color: $black-color;
+          border-bottom-left-radius: 10px;
+          border-top-left-radius: 10px;
+          border: none;
+          outline: none;
+          padding-left: 15px;
+          color: $white-color;
+          font-family: $fuente1;
+          min-width: 200px;
+          width: 80%;
+        }
+
+        button {
+          background-color: $white-color;
+          border: none;
+          border-bottom-right-radius: 10px;
+          border-top-right-radius: 10px;
+          padding: 0 5px 0 5px;
+          color: $black-color;
+          cursor: pointer;
+          font-weight: 600;
+          font-family: $fuente1;
+          width: 20%;
+        }
+      }
+    }
+
+    .alumnos {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
   }
 }

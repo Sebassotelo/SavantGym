@@ -15,7 +15,7 @@
   .cabecera {
     margin-top: 15px;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     justify-items: center;
 
     p {
@@ -29,7 +29,8 @@
 }
 
 .nuevaVentaBtn {
-  background-color: $black-color;
+  background-color: $white-color;
+  color: $black-color;
   padding: 15px;
   border-radius: 15px;
   font-weight: 900;

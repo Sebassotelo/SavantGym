@@ -18,3 +18,20 @@
     background-color: $white-color;
   }
 }
+
+@media (max-width: 900px) {
+  .alumnos {
+    height: 40px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    border-bottom: 1px solid $black-color;
+    cursor: pointer;
+
+    p {
+      color: $black-color;
+    }
+  }
+}
