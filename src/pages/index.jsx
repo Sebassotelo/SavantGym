@@ -64,7 +64,7 @@ export default function Home() {
     },
     {
       icon: "🛒",
-      title: "Guardar venta de productos en alumnos.",
+      title: "Guardar venta de productos en alumnos",
       desc: "Se podran adjuntar la venta de productos a la carta de cada Alumno.",
     },
     {
