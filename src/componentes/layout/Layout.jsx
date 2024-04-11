@@ -8,8 +8,11 @@ function Layout({ children, title }) {
   return (
     <div style={{ display: "grid" }}>
       <Head>
-        <title>Savant Gym | Home</title>
-        <meta name="description" content="Savant Gym |  Gimnasio de Crossfit" />
+        <title>Gym Manager | Home</title>
+        <meta
+          name="description"
+          content="Gym Manager |  Cotrol de mesualidad de Alumnos."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
