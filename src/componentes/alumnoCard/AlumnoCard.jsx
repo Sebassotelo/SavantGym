@@ -39,30 +39,34 @@ function AlumnoCard({
   const [showEdit, setShowEdit] = useState(false);
 
   const manejarActivo = async (e) => {
-    if (
-      confirm(
-        `Seguro que desea ${!activo ? "activar" : "desactivar"} a ${nombre}`
-      ) === true
-    ) {
-      e.preventDefault(e);
+    if (context.premium.actio) {
+      if (
+        confirm(
+          `Seguro que desea ${!activo ? "activar" : "desactivar"} a ${nombre}`
+        ) === true
+      ) {
+        e.preventDefault(e);
 
-      //traemos los datos de base de datos
-      const docRef = doc(context.firestore, `users/${context.user.email}`);
-      const consulta = await getDoc(docRef);
-      const infoDocu = consulta.data();
+        //traemos los datos de base de datos
+        const docRef = doc(context.firestore, `users/${context.user.email}`);
+        const consulta = await getDoc(docRef);
+        const infoDocu = consulta.data();
 
-      const index = infoDocu.alumnos.findIndex((item) => item.id === id);
+        const index = infoDocu.alumnos.findIndex((item) => item.id === id);
 
-      let alumnosCopia = [...infoDocu.alumnos];
+        let alumnosCopia = [...infoDocu.alumnos];
 
-      alumnosCopia[index].activo = !activo;
+        alumnosCopia[index].activo = !activo;
 
-      console.log(alumnosCopia);
+        console.log(alumnosCopia);
 
-      //seteamos el estado y updateamos la base de datos
-      updateDoc(docRef, { alumnos: [...alumnosCopia] });
-      llamadaDB();
-      toast.success(`${!activo ? "Alumno activo" : "Alumno Inactivo"}`);
+        //seteamos el estado y updateamos la base de datos
+        updateDoc(docRef, { alumnos: [...alumnosCopia] });
+        llamadaDB();
+        toast.success(`${!activo ? "Alumno activo" : "Alumno Inactivo"}`);
+      }
+    } else {
+      toast.error("No tiene premium activo.");
     }
   };
 
@@ -93,12 +97,20 @@ function AlumnoCard({
 
         <MdOutlineAttachMoney
           className={styles.realizarPago}
-          onClick={() => setShowPago(true)}
+          onClick={() => {
+            context.premium.activo
+              ? setShowPago(true)
+              : toast.error("No tiene Premium Activo.");
+          }}
         />
 
         <MdOutlineEdit
           className={styles.delete}
-          onClick={() => setShowEdit(true)}
+          onClick={() => {
+            context.premium.activo
+              ? setShowEdit(true)
+              : toast.error("No tiene Premium Activo.");
+          }}
         />
 
         <MdOutlineDeleteForever

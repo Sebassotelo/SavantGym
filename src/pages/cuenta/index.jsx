@@ -54,6 +54,14 @@ function Index() {
         </li>
       </ul>
       <div className={styles.seccion}>
+        {context.premium && !context.premium.activo && (
+          <div className={styles.seccion__premium}>
+            <p>
+              No tiene premium activo, para realizar cambios o agregar alumnos
+              necesitará suscribirse.
+            </p>
+          </div>
+        )}
         {context.alumnos && estadoMenu === 1 && <Alumnos />}
         {estadoMenu === 2 && <Activos />}
         {estadoMenu === 3 && <Ventas />}

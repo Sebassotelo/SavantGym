@@ -3,6 +3,7 @@ import styles from "./ventas.module.scss";
 import NuevaVenta from "./nuevaVenta/NuevaVenta";
 import ContextGeneral from "@/servicios/contextPrincipal";
 import PagosPendientes from "./pagosPendientes/PagosPendientes";
+import { toast } from "sonner";
 
 function Ventas() {
   const context = useContext(ContextGeneral);
@@ -10,7 +11,11 @@ function Ventas() {
   const [showNuevaVenta, setShowNuevaVenta] = useState(false);
 
   const mostrarNuevaVenta = () => {
-    setShowNuevaVenta(!showNuevaVenta);
+    if (context.premium.activo) {
+      setShowNuevaVenta(!showNuevaVenta);
+    } else {
+      toast.error("No tiene premium activo.");
+    }
   };
 
   return (

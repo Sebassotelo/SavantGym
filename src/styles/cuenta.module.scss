@@ -33,6 +33,16 @@
   }
 }
 
+.seccion__premium {
+  p {
+    background-color: rgb(212, 85, 85);
+    padding: 5px;
+    color: white;
+    font-weight: 400;
+    font-size: 22px;
+  }
+}
+
 @media (max-width: 900px) {
   .main {
     grid-template-columns: 1fr;

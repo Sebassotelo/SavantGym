@@ -17,6 +17,8 @@ function Context(props) {
   const [alumnos, setAlumnos] = useState([]);
   const [alumnosOriginal, setAlumnosOriginal] = useState([]);
 
+  const [premium, setPremium] = useState(null);
+
   const auth = getAuth(firebaseApp);
   const firestore = getFirestore(firebaseApp);
 
@@ -49,10 +51,14 @@ function Context(props) {
       const fechaDeRegistro = `${fecha.getDate()}/${
         fecha.getMonth() + 1
       }/${fecha.getFullYear()}`;
+      const fechaDeVencimiento = `${fecha.getDate()}/${
+        fecha.getMonth() + 2
+      }/${fecha.getFullYear()}`;
       await setDoc(docRef, {
         alumnos: [],
         idCuenta: new Date().getTime().toString(),
         fechaDeRegistro: fechaDeRegistro,
+        premium: { activo: true, vencimiento: fechaDeVencimiento, pago: "" },
       });
       llamadaDB();
     }
@@ -82,6 +88,8 @@ function Context(props) {
     setAlumnos(infoDocu.alumnos.sort(compararPorNombre));
     setAlumnosOriginal(infoDocu.alumnos);
 
+    setPremium(infoDocu.premium);
+
     setLoader(true);
   };
 
@@ -97,6 +105,7 @@ function Context(props) {
         alumnos: alumnos,
         alumnosOriginal: alumnosOriginal,
         urlLogo: urlLogo,
+        premium: premium,
         setEstadoUsuario,
         setLoader,
         setUser,
@@ -105,6 +114,7 @@ function Context(props) {
         setAlumnosOriginal,
         verificarLogin,
         llamadaDB,
+        setPremium,
       }}
     >
       {props.children}

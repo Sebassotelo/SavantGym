@@ -8,6 +8,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import ContextGeneral from "@/servicios/contextPrincipal";
+import { toast } from "sonner";
 
 function AgregarAlumnos() {
   const context = useContext(ContextGeneral);
@@ -17,7 +18,11 @@ function AgregarAlumnos() {
   const [fechaVencimiento, setFechaVencimiento] = useState("");
 
   const manejarShow = () => {
-    setShow(!show);
+    if (context.premium.activo) {
+      setShow(!show);
+    } else {
+      toast.error("No tiene premium activo.");
+    }
   };
 
   const calcularFechaVencimiento = () => {
