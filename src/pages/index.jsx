@@ -74,19 +74,6 @@ export default function Home() {
     },
   ];
 
-  const arrayClientes = [
-    {
-      url: "minime.byvalerie",
-      nombre: "Minime By Valerie",
-      logo: "https://i.ibb.co/n7KvnJ6/Banner-de-You-Tube-gamer-gato-lindo-rosa-png.png",
-    },
-    {
-      url: "susi.moda",
-      nombre: "Susi Moda",
-      logo: "https://i.ibb.co/Ny16hJ3/zy1-Xa6q-png.png",
-    },
-  ];
-
   const [arrayMostrarPrecio, setArrayMostrarPrecio] = useState(arrayPrecio);
   useEffect(() => {
     verificarLogin();
