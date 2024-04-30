@@ -183,7 +183,7 @@ function NuevaVenta({ mostrarNuevaVenta }) {
         )}
 
         <button className={styles.cerrar} onClick={mostrarNuevaVenta}>
-          cerrar
+          Cerrar
         </button>
       </div>
     </div>

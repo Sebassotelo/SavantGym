@@ -1,9 +1,9 @@
 @import "../../styles/variables.module.scss";
 
 .agregar {
-  background-color: $white-color;
-  color: $black-color;
-  border-radius: 10px;
+  background-color: $black-color;
+  color: white;
+  border-radius: 5px;
   padding: 15px;
   font-weight: 900;
   cursor: pointer;
@@ -42,10 +42,10 @@
     }
 
     input {
-      background-color: $white-color;
+      background-color: white;
       height: 40px;
-      border: none;
-      border-radius: 10px;
+      border: 1px solid $black-color;
+      border-radius: 5px;
       outline: none;
       padding-left: 15px;
       color: $black-color;
@@ -56,8 +56,8 @@
 
     button {
       background-color: $black-color;
-      color: $white-color;
-      border-radius: 10px;
+      color: white;
+      border-radius: 5px;
       padding: 15px;
       font-weight: 900;
       cursor: pointer;

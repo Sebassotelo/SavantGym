@@ -5,6 +5,12 @@ import ContextGeneral from "@/servicios/contextPrincipal";
 import Activos from "@/componentes/activos/Activos";
 import Ventas from "@/componentes/ventas/Ventas";
 
+import {
+  MdPerson,
+  MdOutlineCalendarMonth,
+  MdOutlineCurrencyExchange,
+} from "react-icons/md";
+
 import { push } from "next/router";
 
 function Index() {
@@ -27,30 +33,33 @@ function Index() {
       <ul className={styles.menu}>
         <li
           style={{
-            backgroundColor: estadoMenu == 1 && "#4b05ad",
-            color: estadoMenu == 1 && "#E8D6CB",
+            backgroundColor: estadoMenu == 1 && "#413f46",
+            color: estadoMenu == 1 && "white",
           }}
           onClick={() => cambioEstado(1)}
         >
-          Alumnos
+          <MdPerson className={styles.icon} /> <span>Alumnos</span>
         </li>
         <li
           style={{
-            backgroundColor: estadoMenu == 2 && "#4b05ad",
-            color: estadoMenu == 2 && "#E8D6CB",
+            backgroundColor: estadoMenu == 2 && "#413f46",
+            color: estadoMenu == 2 && "white",
           }}
           onClick={() => cambioEstado(2)}
         >
-          Vencimientos
+          {" "}
+          <MdOutlineCalendarMonth className={styles.icon} />{" "}
+          <span>Vencimientos</span>
         </li>
         <li
           style={{
-            backgroundColor: estadoMenu == 3 && "#4b05ad",
-            color: estadoMenu == 3 && "#E8D6CB",
+            backgroundColor: estadoMenu == 3 && "#413f46",
+            color: estadoMenu == 3 && "white",
           }}
           onClick={() => cambioEstado(3)}
         >
-          Ventas
+          <MdOutlineCurrencyExchange className={styles.icon} />{" "}
+          <span>Ventas</span>
         </li>
       </ul>
       <div className={styles.seccion}>

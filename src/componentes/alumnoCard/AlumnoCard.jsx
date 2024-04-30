@@ -39,7 +39,7 @@ function AlumnoCard({
   const [showEdit, setShowEdit] = useState(false);
 
   const manejarActivo = async (e) => {
-    if (context.premium.actio) {
+    if (context.premium.activo) {
       if (
         confirm(
           `Seguro que desea ${!activo ? "activar" : "desactivar"} a ${nombre}`
@@ -57,8 +57,6 @@ function AlumnoCard({
         let alumnosCopia = [...infoDocu.alumnos];
 
         alumnosCopia[index].activo = !activo;
-
-        console.log(alumnosCopia);
 
         //seteamos el estado y updateamos la base de datos
         updateDoc(docRef, { alumnos: [...alumnosCopia] });

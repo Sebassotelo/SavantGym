@@ -5,8 +5,9 @@
   grid-template-columns: repeat(5, 1fr);
   align-items: center;
   justify-items: center;
-  background-color: $white-color;
+  background-color: white;
   padding: 10px;
+  border: 1px solid $black-color;
 
   p {
     font-size: 18px;

@@ -7,27 +7,36 @@
   grid-template-columns: 250px 1fr;
 
   .menu {
-    background-color: $white-color;
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
-    padding: 50px 0 0 30px;
+    padding: 50px 0 0 10px;
+    border-right: 2px solid $black-color;
 
     li {
+      width: 95%;
       list-style: none;
       font-weight: 900;
       font-size: 22px;
       color: $black-color;
       transition-duration: 0.3s;
       cursor: pointer;
+      border-bottom: 1px solid $black-color;
       padding: 10px;
-      border-radius: 10px;
-      background-color: $white-color;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
 
       &:hover {
         color: white;
         background-color: $black-color;
+      }
+
+      .icon {
+        font-size: 28px !important;
       }
     }
   }
@@ -46,9 +55,10 @@
 @media (max-width: 900px) {
   .main {
     grid-template-columns: 1fr;
-    grid-template-rows: 80px 1fr;
-
+    grid-template-rows: 1fr;
+    margin-bottom: 80px;
     .menu {
+      width: 100vw;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -56,10 +66,24 @@
       gap: 10px;
       padding: 20px;
       height: 80px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      border-top: 2px solid $black-color;
+      overflow-x: visible;
 
       li {
         font-size: 20px;
         padding: 10px;
+        justify-content: center;
+        border: none;
+        .icon {
+          font-size: 42px;
+        }
+
+        span {
+          display: none;
+        }
       }
     }
   }

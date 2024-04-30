@@ -58,6 +58,10 @@ function AlumnoPopUp({
     };
   };
 
+  const avisoElimVenta = () => {
+    toast.error("Elimina la venta en la seccion de Ventas");
+  };
+
   return (
     <div className={styles.main}>
       <div className={styles.container}>
@@ -89,7 +93,7 @@ function AlumnoPopUp({
         {compraProductos &&
           compraProductos.map((item, i) => {
             return (
-              <div className={styles.pagos} key={i}>
+              <div className={styles.pagos} key={i} onClick={avisoElimVenta}>
                 <p>{item.producto}</p>
                 <p>{item.fecha}</p>
                 <p>${item.monto}</p>

@@ -107,7 +107,7 @@ export default function Home() {
                       signInWithPopup(context.auth, googleProvider)
                     }
                   >
-                    Creá tu Cuenta con Google
+                    Ingresá con Google
                   </button>
                 )}
               </div>

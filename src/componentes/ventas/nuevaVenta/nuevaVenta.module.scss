@@ -26,9 +26,9 @@
       input {
         width: 90%;
         height: 40px;
-        background-color: $white-color;
+        background-color: white;
         outline: none;
-        border: none;
+        border: 1px solid $black-color;
         padding-left: 15px;
         border-bottom-left-radius: 10px;
         border-top-left-radius: 10px;
@@ -37,7 +37,7 @@
 
       button {
         background-color: $black-color;
-        color: $white-color;
+        color: white;
         height: 40px;
         width: 10%;
         border: none;
@@ -91,20 +91,21 @@
       input {
         width: 100%;
         height: 40px;
-        background-color: $white-color;
+        background-color: white;
         outline: none;
-        border: none;
+        border: 1px solid $black-color;
         padding-left: 15px;
-        border-bottom-left-radius: 10px;
-        border-top-left-radius: 10px;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
         color: $black-color;
       }
 
       button {
         background-color: $black-color;
-        color: $white-color;
+        color: white;
+        font-weight: 600;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: 5px;
         border: none;
         margin-top: 10px;
         cursor: pointer;
@@ -112,10 +113,11 @@
     }
 
     .cerrar {
-      background-color: $white-color;
-      color: $black-color;
+      background-color: $black-color;
+      color: white;
+      font-weight: 600;
       padding: 10px;
-      border-radius: 10px;
+      border-radius: 5px;
       border: none;
       margin-top: 10px;
       cursor: pointer;

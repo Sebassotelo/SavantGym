@@ -28,11 +28,11 @@
 
     p {
       font-weight: 900;
-      color: $white-color;
+      color: white;
       transition-duration: 0.3s;
       cursor: pointer;
       &:hover {
-        color: $secondary-color;
+        color: $white-color;
       }
     }
   }
