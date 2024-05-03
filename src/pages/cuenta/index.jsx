@@ -9,9 +9,11 @@ import {
   MdPerson,
   MdOutlineCalendarMonth,
   MdOutlineCurrencyExchange,
+  MdOutlineSettings,
 } from "react-icons/md";
 
 import { push } from "next/router";
+import Config from "@/componentes/config/Config";
 
 function Index() {
   const context = useContext(ContextGeneral);
@@ -61,6 +63,15 @@ function Index() {
           <MdOutlineCurrencyExchange className={styles.icon} />{" "}
           <span>Ventas</span>
         </li>
+        <li
+          style={{
+            backgroundColor: estadoMenu == 4 && "#413f46",
+            color: estadoMenu == 4 && "white",
+          }}
+          onClick={() => cambioEstado(4)}
+        >
+          <MdOutlineSettings className={styles.icon} /> <span>Mi Cuenta</span>
+        </li>
       </ul>
       <div className={styles.seccion}>
         {context.premium && !context.premium.activo && (
@@ -74,6 +85,7 @@ function Index() {
         {context.alumnos && estadoMenu === 1 && <Alumnos />}
         {estadoMenu === 2 && <Activos />}
         {estadoMenu === 3 && <Ventas />}
+        {estadoMenu === 4 && <Config />}
       </div>
     </div>
   );
